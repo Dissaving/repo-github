@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4</title>
+    <style>
+        .formItems {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const str = 'One: \'Hi Mary.\' Two: \'Oh, hi.\'\n' +
+        'One: \'How are you doing?\'\n' +
+        'Two: \'I\'m doing alright. How about you?\'\n' +
+        'One: \'Not too bad. The weather is great isn\'t it?\'\n' +
+        'Two: \'Yes. It\'s absolutely beautiful today.\'\n' +
+        'One: \'I wish it was like this more frequently.\'\n' +
+        'Two: \'Me too.\'\n' +
+        'One: \'So where are you going now?\'\n' +
+        'Two: \'I\'m going to meet a friend of mine at the department store\'\n' +
+        'One: \'Going to do a little shopping?\'\n' +
+        'Two: \'Yeah, I have to buy some presents for my parents.\'\n' +
+        'One: \'What\'s the occasion?\'\n' +
+        'Two: \'It\'s their anniversary.\'\n' +
+        'One: \'That\'s great. Well, you better get going. You don\'t want to be late.\'\n' +
+        'Two: \'I\'ll see you next time.\'\n' +
+        'One: \'Sure.\' Bye.\''
+
+    const regexp = /'/g
+    const nextStr = str.replace(regexp, '"') // Задание 1
+    const regexp2 = /([int])(")/ig
+    const nextStr2 = nextStr.replace(regexp2, "$1\'") // из задания 1 в 2
+    const regexp3 = /([^int])(')/ig
+    const nextStr3 = str.replace(regexp3, '$1"') // Задание 2
+    console.log(nextStr2 === nextStr3)
+</script>
+
+<page>
+    <form>
+        <fieldset id="form" name="userFields" style="display: flex; flex-direction: column">
+            <legend>Lesson 4</legend>
+            <input class="formItems" id="name" placeholder="...Name" required type="text">
+            <input class="formItems" id="tel" type="tel" placeholder="...Tel +7(495)999-9999" required>
+            <input class="formItems" id="e-mail" type="email" placeholder="...E-mail" required>
+            <textarea class="formItems" id="textarea" placeholder="...Text 50 symbols max" maxlength="50" rows="4"
+                      required></textarea>
+            <button class="formItems" type="submit" id="button">Submit</button>
+        </fieldset>
+    </form>
+</page>
+<script>
+
+    class Form {
+        constructor() {
+            let regexName = /^([A-Za-z\-']{2,16})|([а-яА-ЯёЁ\-']{2,16})$/
+            let regexPhone = /\+7\(\d{3}\)\d{3}-\d{4}/
+            let regexEmail = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/
+            let regexText = /^([A-Za-z\-']{2,16})|([а-яА-ЯёЁ\-']{2,16})|([1-9]{1,16})$/igm
+            this.container = document.getElementById('form')
+            this.regexArr = [regexName, regexPhone, regexEmail, regexText]
+            this.inputsIds = ['name', 'tel', 'e-mail', 'textarea']
+
+            this.handleActions()
+        }
+
+        validate(id, regex) {
+            let inputForValidation = document.getElementById(id);
+            return regex.test(inputForValidation.value);
+        }
+
+        handleActions() {
+            this.container.addEventListener('click', (evt) => {
+                for (let i = 0; i < this.inputsIds.length; i++) {
+                    if (evt.target.id === 'button') {
+                        if (this.validate(this.inputsIds[i], this.regexArr[i]) === false) {
+                            document.getElementById(this.inputsIds[i]).style.border = '1px solid red'
+                            console.log('Введите корректное значение')
+                        } else {
+                            document.getElementById(this.inputsIds[i]).style.border = '1px solid black'
+                        }
+                    }
+                }
+            })
+        }
+    }
+
+    let form = new Form()
+</script>
+</body>
+</html>
