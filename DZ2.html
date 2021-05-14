@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DZ 1</title>
+</head>
+<body>
+<script>
+
+    // Урок 1
+
+    // Задание 1
+
+     let Tc = +prompt("ВВедите температуру в Цельсиях");
+     let Tf = (9 / 5) * Tc + 32;
+     alert("Температура по Фаренгейту = " + Tf);
+
+    // Задание 2
+
+      let a = 3;
+      let b = 5;
+
+
+      a = a + b; // 8
+      b = b - a; // -3
+      b = -b; // 3
+      a = a - b; // 5
+
+      console.log(a, b);
+
+    // Задание 3
+
+       let admin, name;
+       name = "Василий";
+       admin = name;
+       console.log(admin);
+
+    // Задание 4
+    // 1000108
+
+    // Задание 5
+
+    /*Атрибут defer сообщает браузеру, что он должен продолжать обрабатывать страницу и загружать скрипт
+    в фоновом режиме, а затем запустить этот скрипт, когда он загрузится. Будет сохранен порядок выполнения скриптов и
+    работает только с внешними скриптами с тегом src.
+
+    Атрибут async означает, что скрипт абсолютно независим. Остальные скрипты не ждут async, и скрипты c async
+    не ждут другие скрипты */
+
+    // Урок 2
+
+    // Задание 1
+
+        var a = 1, b = 1, c, d;
+        c = ++a; alert(c);           // 2 - Прекремент срабатывает, затем выводим в окно 2, а = 2
+        d = b++; alert(d);           // 1 - Срабатывает присвоение, затем посткремент, b = 2
+        c = (2+ ++a); alert(c);      // 5 - 2 + прекремент с а = 5, считается сумма в кобках, затем присваивается,
+                                     // а = 3
+        d = (2+ b++); alert(d);      // 4 - считается сумма в кобках, затем присваивается, b = 3
+        alert(a);                    // 3
+        alert(b);                    // 3
+
+    // Задание 2
+
+
+    var a = 2;
+    var x = 1 + (a *= 2); // Сначала считается то что в скобхах по приоритету, затем сложение,
+    // затем присваивание - x = 5
+
+
+
+    // Задание 3
+
+        let a = Math.round((Math.random() * (-100 - 100) + 100));
+        let b = Math.round((Math.random() * (-100 - 100) + 100));
+
+        console.log(a,b);
+
+        function myFunction(a, b) {
+            if (a >= 0 && b >= 0) return a - b;
+            if (a < 0 && b < 0) return a * b;
+            return a + b;
+        }
+
+        console.log(myFunction(a,b));
+
+    // Задание 4
+
+      let a = Math.round((Math.random() * 15));
+      console.log("a = " + a);
+
+      switch (a) {
+          case 0:
+              console.log(a);
+              a++;
+         case 1:
+             console.log(a);
+             a++;
+          case 2:
+              console.log(a);
+              a++;
+          case 3:
+              console.log(a);
+              a++;
+          case 4:
+              console.log(a);
+              a++;
+          case 5:
+              console.log(a);
+              a++;
+          case 6:
+              console.log(a);
+              a++;
+          case 7:
+              console.log(a);
+              a++;
+          case 8:
+              console.log(a);
+              a++;
+          case 9:
+              console.log(a);
+              a++;
+          case 10:
+              console.log(a);
+              a++;
+          case 11:
+              console.log(a);
+              a++;
+          case 12:
+              console.log(a);
+              a++;
+          case 13:
+              console.log(a);
+              a++;
+          case 14:
+              console.log(a);
+              a++;
+          case 15:
+              console.log(a);
+              a++;
+      }
+
+  // Рекурсия
+
+      function rec(a){
+          if (a <= 15){
+              console.log(a)
+          }
+          if (a === 16) return;
+          rec(++a);
+      }
+
+      rec(a);
+
+    // Задание 5
+
+        function sum(a,b){
+            return a + b;
+        }
+        function minus(a,b){
+            return a - b;
+        }
+        function mult(a,b){
+            return a * b;
+        }
+        function del(a,b){
+            return a / b;
+        }
+
+        // Задание 6
+
+        function mathOperation(arg1, arg2, operation){
+            if (arg2 === 0){
+                return "На ноль делить нельзя";
+            }
+            switch (operation){
+                case sum: return sum(arg1, arg2);
+                case minus: return minus(arg1, arg2);
+                case mult: return mult(arg1, arg2);
+                case del: return del(arg1, arg2);
+            }
+        }
+
+        console.log(mathOperation(5,5,del));
+
+</script>
+</body>
+</html>
