@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DZ 3</title>
+</head>
+<body>
+
+<script>
+
+    // Задание 1
+
+        function testNumber(number) {
+            for (let i = 2; i <= number/2; i++) {
+                if ((number % i) === 0) {
+                    return number;
+                }
+            }
+        }
+
+        let start = 2;
+
+        while (start <= 100) {
+            if (start !== testNumber(start)){
+                console.log(start)
+            }
+            start++;
+        }
+
+    // Задание 2 + 3
+
+    let basket = [
+        {
+            title: "Товар 1",
+            price: 10,
+            quantity: 3
+        },
+        {
+            title: "Товар 2",
+            price: 200,
+            quantity: 4
+        },
+        {
+            title: "Товар 3",
+            price: 300,
+            quantity: 1
+        },
+        {
+            title: "Товар 4",
+            price: 500,
+            quantity: 2
+        }
+    ]
+
+
+    function countBasketPrice(array) {
+        let finalCount = 0;
+        for (let i = 0; i < array.length; i++) {
+            finalCount += array[i].price * array[i].quantity;
+        }
+        console.log(finalCount);
+        return finalCount;
+    }
+
+    countBasketPrice(basket);
+
+    // Задание 4
+
+    for(let i = 0; i < 10; console.log(i++)){}
+
+    // Задание 5
+
+    let x = "x";
+    for (let i = 1; i <= 20; i++ ){
+        console.log(x);
+        x = x + "x";
+    }
+
+</script>
+
+</body>
+</html>
