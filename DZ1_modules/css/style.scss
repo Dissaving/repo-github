@@ -1,0 +1,24 @@
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.switchBox {
+  display: flex;
+}
+
+.timerHeading, .calcDateHeading {
+  padding: 10px;
+  cursor: pointer;
+  &:hover {
+    outline: 1px solid black;
+  }
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
