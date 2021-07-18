@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datetime App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js" integrity="sha512-dMiBqqEV5i3KqpAdsgQSSZ72DnNib7otY0X+b/Tnn1EmLym1dxuZ19csdZqBnfDniKd9bmNtzStQzuMrIa5Ngw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+<div class="switchBox wrapper">
+    <div class="calcDateHeading">Калькулятор дат</div>
+    <div class="timerHeading">Таймер</div>
+</div>
+
+<form id="datecalc" class="wrapper">
+    <h3>Калькулятор дат</h3>
+    <label>
+        <strong>Первая дата:</strong>
+        <input type="date" name="firstDate" />
+    </label>
+    <label>
+        <strong>Вторая дата:</strong>
+        <input type="date" name="secondDate" />
+    </label>
+    <button type="submit">Расчитать промежуток</button>
+    <p id="datecalc__result"></p>
+</form>
+
+<form id="timerForm" class="invisible wrapper">
+    <h3>Таймер</h3>
+    <br>
+    <label>
+        <strong>Выбрать дату</strong>
+        <input type="date" name="toDate" />
+    </label>
+
+    <button type="submit">Рассчитать промежуток</button>
+    <button type="reset">Очистить</button>
+    <p id="timerResult"></p>
+</form>
+</body>
+
+</html>
