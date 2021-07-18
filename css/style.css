@@ -1,0 +1,26 @@
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.switchBox {
+  display: flex;
+}
+
+.timerHeading, .calcDateHeading {
+  padding: 10px;
+  cursor: pointer;
+}
+.timerHeading:hover, .calcDateHeading:hover {
+  outline: 1px solid black;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */
